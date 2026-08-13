@@ -1,40 +1,319 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Max's TUFF site</title>
-    <style>
-        .image-container {
-            position: relative;
-            width: 1000px;
-            height: 1000px;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .image-container img {
-            display: block;
-        }
+    <title>Max's TUFF Site</title>
 
-        /* Updated styles to move the text to the top */
-        .image-container p {
-            position: absolute;
-            top: 20px;            /* Pushes text 20 pixels down from the very top */
-            left: 0;
-            width: 100%;          /* Makes the text container span the whole width */
-            text-align: center;   /* Centers the text horizontally */
-            color: white;
-            font-size: 32px;
-            font-weight: bold;
-            font-family: sans-serif;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="image-container">
-        <img src="images/bg.jpg" alt="HAHHAH U CANT SEE BGG" width="1000" height="1000">
-        <p>HAIII WELCOM TO MAH SITEEE</p>
+
+        <!-- BACKGROUND -->
+        <img
+            class="bg-image"
+            src="images/bg.jpg"
+            alt="Background"
+        >
+
+
+        <!-- ================================
+             LEFT FACE
+             ================================ -->
+
+        <div class="sidebar-left">
+            <img
+                class="sidebar-pic"
+                src="me.jpeg"
+                alt="Max Portrait"
+            >
+        </div>
+
+
+        <!-- ================================
+             LINKS
+             ================================ -->
+
+        <div class="social-links-box">
+
+            <div class="social-title">
+                == LINKS ==
+            </div>
+
+            <a
+                class="social-btn yt"
+                href="https://www.youtube.com/@Popovr0100"
+                target="_blank"
+            >
+                ▶ YOUTUBE
+            </a>
+
+            <a
+                class="social-btn tt"
+                href="https://www.tiktok.com/@maxxx9104"
+                target="_blank"
+            >
+                🎵 TIKTOK
+            </a>
+
+            <a
+                class="social-btn dc"
+                href="https://discord.gg/mPKxQdwCE2"
+                target="_blank"
+            >
+                💬 DISCORD
+            </a>
+
+        </div>
+
+
+        <!-- ================================
+             JJK POSTER
+             ================================ -->
+
+        <div class="poster-jjk">
+
+            <img
+                class="poster-img"
+                src="jjk.jpg"
+                alt="Jujutsu Kaisen Poster"
+            >
+
+        </div>
+
+
+        <!-- ================================
+             PANIC! AT THE DISCO POSTER
+             ================================ -->
+
+        <div class="poster-patd">
+
+            <img
+                class="poster-img"
+                src="patd.jpg"
+                alt="Panic! At The Disco Poster"
+            >
+
+        </div>
+
+
+        <!-- ================================
+             WELCOME HEADER
+             ================================ -->
+
+        <p class="welcome-text">
+            ★ HAIII WELCOM TO MAH SITEEE ★
+        </p>
+
+
+        <!-- ================================
+             SCROLLING MARQUEE
+             ================================ -->
+
+        <div class="marquee-container">
+
+            <marquee scrollamount="6">
+                +++ SITE OPTIMIZED FOR INTERNET EXPLORER 5.0 +++
+                REFRESH FOR UPDATES +++
+                NOW PLAYING: PANIC! AT THE DISCO +++
+            </marquee>
+
+        </div>
+
+
+        <!-- ================================
+             RIGHT INFORMATION COLUMN
+             ================================ -->
+
+        <div class="bio-container">
+
+
+            <!-- WINAMP -->
+            <div class="audio-player-box">
+
+                <h4>
+                    [ WINAMP MEDIA PLAYER ]
+                </h4>
+
+                <div style="margin-bottom: 8px;">
+                    ♫ Panic! At The Disco - New Perspective.mp3
+                </div>
+
+                <button
+                    class="play-btn"
+                    id="musicBtn"
+                    onclick="toggleMusic()"
+                >
+                    ▶ PLAY BG MUSIC
+                </button>
+
+                <audio
+                    id="bgMusic"
+                    src="music/new-perspective.mp3"
+                    loop
+                ></audio>
+
+            </div>
+
+
+            <!-- WHO I AM -->
+            <div class="info-box">
+
+                <div class="icon-badge">
+                    🌟
+                </div>
+
+                <h3>
+                    ⚡ WHO I AM ⚡
+                </h3>
+
+                <p>
+                    HAIII IM MAXXX WELCOM TO MAH PART OF THE INTANET
+                </p>
+
+                <div class="blink">
+                    ▼ NEW PROFILE ONLINE ▼
+                </div>
+
+            </div>
+
+
+            <!-- WHAT I LIKE -->
+            <div class="info-box">
+
+                <div class="icon-badge">
+                    💀
+                </div>
+
+                <h3>
+                    ⚡ WHAT I LIKEEEEEE ⚡
+                </h3>
+
+                <p>
+                    I LIKE GAMING, WATCHING ANIME, SLEEP,
+                    FEMBOYS I AM A FEMBOY
+                </p>
+
+                <div class="blink">
+                    ◀ HARDCORE GAMER ZONE ▶
+                </div>
+
+                <div class="construction-text">
+                    ⚠️ UNDER CONSTRUCTION ⚠️
+                </div>
+
+            </div>
+
+
+            <!-- VISITOR COUNTER -->
+            <div class="counter-box">
+
+                <div class="text-divider">
+                    ~*~*~*~*~*~*~*~*~*~*~*~
+                </div>
+
+                <div class="counter-title">
+                    YOU ARE VISITOR NO.
+                </div>
+
+                <div
+                    class="counter-digits"
+                    id="hitCounter"
+                >
+                    000000
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
+
+
+    <!-- ================================
+         JAVASCRIPT
+         ================================ -->
+
+    <script>
+
+        /* BACKGROUND MUSIC */
+
+        function toggleMusic() {
+
+            var audio = document.getElementById("bgMusic");
+            var btn = document.getElementById("musicBtn");
+
+            if (audio.paused) {
+
+                audio.play();
+
+                btn.innerHTML = "■ STOP BG MUSIC";
+
+                btn.style.background = "#00ffff";
+                btn.style.color = "#000";
+
+            } else {
+
+                audio.pause();
+
+                btn.innerHTML = "▶ PLAY BG MUSIC";
+
+                btn.style.background = "#ff00ff";
+                btn.style.color = "#fff";
+
+            }
+        }
+
+
+        /* VISITOR COUNTER */
+
+        function updateCounter() {
+
+            let currentCount =
+                localStorage.getItem("page_view_count");
+
+            if (currentCount === null) {
+
+                currentCount = 0;
+
+            } else {
+
+                const isLocalServer =
+                    window.location.hostname === "localhost" ||
+                    window.location.hostname === "127.0.0.1" ||
+                    window.location.protocol === "file:";
+
+                if (!isLocalServer) {
+
+                    currentCount =
+                        parseInt(currentCount) + 1;
+
+                }
+            }
+
+            localStorage.setItem(
+                "page_view_count",
+                currentCount
+            );
+
+            let paddedCount =
+                String(currentCount).padStart(6, "0");
+
+            document.getElementById("hitCounter").innerText =
+                paddedCount;
+        }
+
+
+        /* START COUNTER */
+
+        window.onload = updateCounter;
+
+    </script>
 
 </body>
 </html>
